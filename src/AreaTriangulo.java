@@ -5,10 +5,10 @@ public class AreaTriangulo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ingrese la base del triangulo: ");
+        System.out.println("Ingrese la base del triangulo y rectángulo: ");
         int base = scanner.nextInt();
 
-        System.out.println("Ingrese la altura del triangulo y el cilindro: ");
+        System.out.println("Ingrese la altura del triangulo, el cilindro y el rectángulo: ");
         int altura = scanner.nextInt();
         
         System.out.println("Ingrese el radio de la circunferencia y el cilindro: ");
@@ -23,6 +23,7 @@ public class AreaTriangulo {
         System.out.println("El area de la circunferencia es: " + areaCircunferencia);
 		System.out.println("El perimetro de la circunferencia es: " + perimetroCircunferencia);
 		System.out.println("El area del cilindro es: " + areaCilindro(radio, altura));
+		System.out.println("El area del rectangulo es: "  +calcularAreaRectangulo(base,altura));
         
     }
 
@@ -44,4 +45,9 @@ public class AreaTriangulo {
         double areaLateral = 2 * Math.PI * radio * altura; 
         return 2 * areaBase + areaLateral;
     }
+	
+	public static double calcularAreaRectangulo(double base, double altura) {
+		return base * altura;
+	}
+
 }
