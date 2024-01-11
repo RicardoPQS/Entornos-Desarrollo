@@ -5,17 +5,16 @@ public class AreaTriangulo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ingrese la longitud del lado 1 del triangulo: ");
-        int lado1 = scanner.nextInt();
+        System.out.println("Ingrese la base del triangulo: ");
+        int base = scanner.nextInt();
 
-        System.out.println("Ingrese la longitud del lado 2 del triangulo: ");
-        int lado2 = scanner.nextInt();
+        System.out.println("Ingrese la altura del triangulo y el cilindro: ");
+        int altura = scanner.nextInt();
         
-        System.out.println("Ingrese el radio de la circunferencia: ");
+        System.out.println("Ingrese el radio de la circunferencia y el cilindro: ");
 		int radio = scanner.nextInt();
 
-
-        double area = calcularArea(lado1, lado2);
+        double area = calcularArea(base, altura);
         double areaCircunferencia = calcularAreaCircunferencia(radio);
 		double perimetroCircunferencia = calcularAreaCircunferencia(radio);
 
@@ -23,6 +22,7 @@ public class AreaTriangulo {
         System.out.println("El area del triangulo es: " + area);
         System.out.println("El area de la circunferencia es: " + areaCircunferencia);
 		System.out.println("El perimetro de la circunferencia es: " + perimetroCircunferencia);
+		System.out.println("El area del cilindro es: " + areaCilindro(radio, altura));
         
     }
 
@@ -38,4 +38,10 @@ public class AreaTriangulo {
 	public static double calcularPerimetroCircunferencia(int radio) {
 		return 2 * Math.PI * radio;
 	}
+	
+	public static double areaCilindro(double radio, double altura) {
+        double areaBase = Math.PI * Math.pow(radio, 2); 
+        double areaLateral = 2 * Math.PI * radio * altura; 
+        return 2 * areaBase + areaLateral;
+    }
 }
